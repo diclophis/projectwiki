@@ -1,1 +1,18 @@
 A prototype server-side savable TiddlyWiki
+
+INSTALL:
+
+  Configure Apache:
+
+    <Location />
+      RewriteEngine On
+      RewriteCond %{REQUEST_FILENAME} !-f
+      RewriteRule ^(.*)$ index.php [QSA,L]
+    </Location>
+
+  Create Wiki Repository near index.php:
+
+    # mkdir wikis
+    # chmod -Rv 777 wikis
+
+Hit up DocumentRoot, and go?
