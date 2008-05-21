@@ -40,7 +40,7 @@ if (strlen($wiki)) {
             xml_parser_free($p);
             echo '<p class="projectwikidesc">'.$projectWikiDesc = ($vals[$index['DESCRIPTION'][0]]['value']).'</p>';
             echo '<p>Last Updated Tiddler ';
-            echo '<a href="'.($projectWikiLink = ($vals[$index['LINK'][1]]['value'])).'">';
+            echo '<a href="'.($projectWikiLink = $entry.($vals[$index['LINK'][0]]['value'])).'">';
             echo $latestTiddlerTitle = ($vals[$index['TITLE'][1]]['value']);
             echo '</a></p>';
             echo '</div>';
