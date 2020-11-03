@@ -31,7 +31,7 @@ class TiddlyWiki {
     *
     * @var string cacheObjectBasePath
     */
-    var $cacheObjectBasePath = 'wikis';
+    var $cacheObjectBasePath = '/var/www/html/wikis';
 
     var $new = FALSE;
 

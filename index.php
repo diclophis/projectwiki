@@ -13,12 +13,13 @@ if (isset($_REQUEST['wiki'])) {
 }
 
 $stylesheet = (isset($_REQUEST['stylesheet']) ? $_REQUEST['stylesheet'] : 'style.css');
-$projectWikiUrl = 'http://projectwiki.risingcode.com/';
+$projectWikiUrl = 'http://localhost:8080/';
 $rssUrl = $projectWikiUrl.'wikis/'.$wiki.'/rss.xml';
+$phpUrl = $projectWikiUrl.'wikis/'.$wiki;
 
 if (strlen($wiki)) {
-   if (is_dir('wikis/'.$wiki)) {
-      echo (file_get_contents('wikis/'.$wiki.'/index.html'));
+   if (is_dir('/var/www/html/wikis/'.$wiki)) {
+      echo (file_get_contents('/var/www/html/wikis/'.$wiki.'/index.html'));
    } else {
       include('empty.php');
    }
@@ -29,14 +30,14 @@ if (strlen($wiki)) {
    echo '<input type="submit" value="Create"/>';
    echo '</div>';
    echo '<h1>Active ProjectWikis</h1>';
-   $d = dir("wikis");
+   $d = dir("/var/www/html/wikis");
    while (false !== ($entry = $d->read())) {
       if ($entry != '.' && $entry != '..') {
          echo '<a href="'.$entry.'">'.$entry.'</a><br/>';
-         if (is_file('wikis/'.$entry.'/rss.xml')) {
+         if (is_file('/var/www/html/wikis/'.$entry.'/rss.xml')) {
             echo '<div class="projectwiki">';
             $p = xml_parser_create();
-            xml_parse_into_struct($p, file_get_contents('wikis/'.$entry.'/rss.xml'), $vals, $index);
+            xml_parse_into_struct($p, file_get_contents('/var/www/html/wikis/'.$entry.'/rss.xml'), $vals, $index);
             xml_parser_free($p);
             echo '<p class="projectwikidesc">'.$projectWikiDesc = ($vals[$index['DESCRIPTION'][0]]['value']).'</p>';
             echo '<p>Last Updated Tiddler ';
