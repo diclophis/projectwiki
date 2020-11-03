@@ -1,24 +1,10 @@
-A prototype server-side savable TiddlyWiki
+# A Server-Side Persistent TiddlyWiki
 
-INSTALL:
+This project is a demo of a server-side persistence layer for https://en.wikipedia.org/wiki/TiddlyWiki
 
-  Configure Apache:
+## build and deploy
 
-    <Location />
-      RewriteEngine On
-      RewriteCond %{REQUEST_FILENAME} !-f
-      RewriteRule ^(.*)$ index.php [QSA,L]
-    </Location>
-
-  Create Wiki Repository near index.php:
-
-    # mkdir wikis
-    # chmod -Rv 777 wikis
-
-Hit up DocumentRoot, and go?
-
-Maybe I make this iphone friendly?
-
-Other stuff needs to be fixed, like updating the JS, and double-checking security
-
-wtf?
+```
+polly build Dockerfile
+kubectl apply -f kubernetes
+```

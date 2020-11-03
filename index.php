@@ -13,7 +13,7 @@ if (isset($_REQUEST['wiki'])) {
 }
 
 $stylesheet = (isset($_REQUEST['stylesheet']) ? $_REQUEST['stylesheet'] : 'style.css');
-$projectWikiUrl = 'http://localhost:8080/';
+$projectWikiUrl = 'https://projectwiki.bardin.haus/';
 $rssUrl = $projectWikiUrl.'wikis/'.$wiki.'/rss.xml';
 $phpUrl = $projectWikiUrl.'wikis/'.$wiki;
 

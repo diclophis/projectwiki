@@ -4,7 +4,7 @@
 
 require('libTiddlyWiki.php');
 header('Content-type: text/xml');
-$fileUrl = trim(str_replace("http://localhost:8080/", "wiki=", $_REQUEST['fileUrl']));
+$fileUrl = trim(str_replace("https://projectwiki.bardin.haus/", "wiki=", $_REQUEST['fileUrl']));
 $wikiInfo = array();
 parse_str($fileUrl, $wikiInfo);
 $content = (isset($_REQUEST['content']) ? trim($_REQUEST['content']) : NULL);
