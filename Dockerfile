@@ -20,12 +20,11 @@ ENV APACHE_PID_FILE /var/run/apache2.pid
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_RUN_DIR /var/run/apache2
 
-#RUN mkdir -p /var/lock/apache2; chown www-data /var/lock/apache2
-ADD ajax.php blank.html empty.html empty.php index.php javascript.js libTiddlyWiki.php noscript.css prototype.js style.css /var/www/html/
-RUN mkdir -p /var/www/html/wikis; chown www-data /var/www/html/wikis
-
 ADD projectwiki.conf /etc/apache2/sites-available/projectwiki.conf
 RUN a2ensite projectwiki
+
+ADD ajax.php blank.html empty.php index.php javascript.js libTiddlyWiki.php noscript.css prototype.js style.css /var/www/html/
+RUN mkdir -p /var/www/html/wikis; chown www-data /var/www/html/wikis
 
 #RUN htpasswd -cb /etc/apache2/webdav.password guest guest
 #RUN chown root:www-data /etc/apache2/webdav.password
