@@ -39,6 +39,9 @@
       </div>
    </div>
 <div id="storeArea">
+<div tiddler="DefaultTiddlers" modified="200510031529" modifier="JonBardin" tags="systemTiddlers"></div>
+<div tiddler="MainMenu" modified="200509272228" modifier="JonBardin" tags="systemTiddlers">MainMenu&nbsp;&lt;&lt;newTiddler&gt;&gt;&lt;&lt;calendar thismonth&gt;&gt;</div>
+<div tiddler="UpcomingEvents" modified="" modifier="" tags="">&lt;&lt;showReminders leadtime:30 format:&quot;|DIFF|TIDDLER|&quot; &gt;&gt;</div>
 <div tiddler="SiteSubtitle" modified="200507121318" modifier="JonBardin" tags="systemTiddlers">Short Project Description</div>
 <div tiddler="SiteTitle" modified="200509212109" modifier="JonBardin" tags="systemTiddlers"><?=$wiki?></div>
 <div tiddler="SiteUrl" modified="200507121318" modifier="" tags="systemTiddlers"><?=$phpUrl?></div>
