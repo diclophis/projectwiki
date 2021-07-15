@@ -5,9 +5,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US.UTF-8
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update
-RUN apt-get upgrade -y
-RUN apt-get install -y apache2 apache2-utils libapache2-mod-php php-xml
+RUN apt-get update && apt-get upgrade -y && apt-get install -y apache2 apache2-utils libapache2-mod-php php-xml
 
 RUN a2enmod php7.2 headers rewrite
 RUN a2dissite 000-default
